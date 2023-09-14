@@ -4,6 +4,12 @@
 <div class="container" style="max-width: 600px">
     <h1 class=" text-center">Login Form</h1>
 
+    @if (session('info'))
+        <div class="alert alert-info">
+            {{ session('info') }}
+        </div>
+    @endif
+
     @if (session('auth-fail'))
         <div class="alert alert-warning">
             {{ session('auth-fail') }}

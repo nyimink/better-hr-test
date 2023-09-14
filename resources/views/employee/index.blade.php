@@ -4,6 +4,22 @@
     <div class="container">
         <a href="{{ url('employees/add') }}" class="btn btn-success float-end">add Employee</a>
         <h1>Employees List</h1>
+
+        @if (session('success'))
+            <div class="alert alert-info">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('updated'))
+            <div class="alert alert-info">
+                {{ session('updated') }}
+            </div>
+        @endif
+        @if (session('delete'))
+            <div class="alert alert-info">
+                {{ session('delete') }}
+            </div>
+        @endif
         <table class="table table-bordered table-striped mt-4">
             <tr class="text-center">
                 <td>Id</td>
@@ -25,8 +41,7 @@
                         {{ $employee->address }}
                     </td>
                     <td>
-                        <a class="btn btn-sm btn-outline-dark" href="{{ url("employee/edit/$employee->id") }}">Edit</a>
-                        <a class="btn btn-sm btn-dark" href="{{ url("employee/delete/$employee->id") }}">Delete</a>
+                        <a href="{{ url("/employee/detail/$employee->id") }}" class="btn btn-sm btn-info">Detail</a>
                     </td>
                 </tr>
             @endforeach

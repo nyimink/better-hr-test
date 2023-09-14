@@ -22,7 +22,7 @@ Route::get('register', [UserController::class, 'registerPage']);
 Route::post('register', [UserController::class, 'register']);
 
 Route::get('login', [UserController::class, 'loginPage']);
-Route::post('login', [UserController::class, 'login']);
+Route::post('login', [UserController::class, 'login'])->name('login');
 
 Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
@@ -30,3 +30,10 @@ Route::post('logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/employees', [EmployeeController::class, 'index']);
 Route::get('/employees/add', [EmployeeController::class, 'add']);
 Route::post('/employees/add', [EmployeeController::class, 'create']);
+
+Route::get('/employee/detail/{id}', [EmployeeController::class, 'detail']);
+
+Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit']);
+Route::post('/employee/edit/{id}', [EmployeeController::class, 'update']);
+
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete']);

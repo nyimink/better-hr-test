@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}</title>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/employees') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -25,9 +25,9 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             @auth
-                                <a href="{{ url('/employee/add') }}" class="nav-link text-success">
+                                {{-- <a href="{{ url('/employee/add') }}" class="nav-link text-success">
                                     + Add Employee
-                                </a>
+                                </a> --}}
                             @endauth
                         </li>
                     </ul>
